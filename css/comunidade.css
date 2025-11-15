@@ -1,0 +1,378 @@
+/* =======================================================
+   🌱 COMUNIDADE DE DESENVOLVIMENTO PESSOAL 2.0 (OTIMIZADO)
+   Tema: Dark + Verde Calmo (versão responsiva e acessível)
+   ======================================================= */
+
+/* ---------- VARIÁVEIS DE TEMA ---------- */
+:root {
+  --bg-main: #060e0f;
+  --bg-card: #0e1c1f;
+  --bg-section: #081417;
+  --bg-hover: #142c30;
+
+  --accent: #00c97e;
+  --accent-light: #5effba;
+
+  --text-main: #eaf6f3;
+  --text-muted: #9eb8b1;
+
+  --border: #13373c;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  --radius: 10px;
+
+  --transition: 250ms ease;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+  transition: var(--transition);
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Foco acessível */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* ---------- LINKS E BOTÕES ---------- */
+button, a {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+/* =======================================================
+   HEADER
+======================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-card);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--accent);
+}
+
+.header h1:hover {
+  color: var(--accent-light);
+}
+
+.header p {
+  color: var(--text-muted);
+}
+
+/* Botão de logout */
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* =======================================================
+   CONTAINER PRINCIPAL
+======================================================= */
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto;
+  padding-inline: 1rem;
+  flex: 1;
+}
+
+/* =======================================================
+   MODAL DE LOGIN
+======================================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  backdrop-filter: blur(8px);
+  transition: opacity .3s ease;
+}
+
+.modal-overlay.is-visible {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 450px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-section);
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+/* Botões do modal */
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-button,
+.guest-button {
+  flex: 1;
+  padding: 0.9rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.admin-button {
+  background: var(--accent);
+  color: #000;
+}
+
+.admin-button:hover {
+  background: var(--accent-light);
+}
+
+.guest-button {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.guest-button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* =======================================================
+   SEÇÕES / TÍTULOS
+======================================================= */
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* =======================================================
+   BLOCOS: NOVO TÓPICO / LISTA / COMENTÁRIOS
+======================================================= */
+.new-topic,
+.topic-list,
+.comments-section {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* FORMULÁRIOS */
+.new-topic input,
+.new-topic textarea,
+.new-topic select,
+.new-comment-form input,
+.new-comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-section);
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* Botão criar grupo */
+.new-topic button.btn {
+  margin-top: 1rem;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #000;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* =======================================================
+   LISTA DE TÓPICOS
+======================================================= */
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.topic-card {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  transition: .2s;
+}
+
+.topic-card:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.topic-card h3 {
+  color: var(--accent);
+}
+
+/* Botão abrir */
+.topic-card button {
+  padding: 0.6rem 1rem;
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+}
+
+.topic-card button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* =======================================================
+   COMENTÁRIOS
+======================================================= */
+.comment {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.8rem;
+}
+
+.comment strong {
+  color: var(--accent);
+}
+
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.new-comment-form button {
+  background: var(--accent);
+  color: #000;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* =======================================================
+   BOTÃO VOLTAR
+======================================================= */
+.back-button {
+  padding: 0.75rem 1.2rem;
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+}
+
+.back-button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* =======================================================
+   FOOTER
+======================================================= */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* =======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+/* Tablets */
+@media (max-width: 880px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 500px) {
+  .container {
+    padding-inline: .5rem;
+  }
+
+  .new-topic,
+  .topic-list,
+  .comments-section {
+    padding: 1rem;
+  }
+}

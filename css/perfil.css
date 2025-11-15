@@ -1,0 +1,209 @@
+/* ===============================
+   🌙 PERFIL - Tema Escuro Moderno
+   =============================== */
+
+/* === VARIÁVEIS DE TEMA === */
+:root {
+  --bg-main: #0c0f16;
+  --bg-card: #151a23;
+  --text-main: #e8edf2;
+  --text-muted: #a0a8b3;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border: #1f2937;
+  --radius: 10px;
+}
+
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 500px;
+  width: 100%;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* === SEÇÕES === */
+.section {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-main);
+  margin-bottom: 15px;
+}
+
+/* === FORMULÁRIOS === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  background: #10141c;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 1rem;
+  transition: border 0.2s, background 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  background: #0d131c;
+}
+
+/* === BOTÕES === */
+button {
+  cursor: pointer;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--primary-hover);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.secondary-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: var(--danger-hover);
+}
+
+.logout-btn {
+  background: #222a36;
+}
+
+.logout-btn:hover {
+  background: #2e3848;
+}
+
+/* === MENSAGENS DE ERRO === */
+.error-msg {
+  color: var(--danger);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* === FOTO DE PERFIL === */
+.photo-upload {
+  text-align: center;
+}
+
+.profile-photo-preview {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px auto;
+  border: 2px solid var(--primary);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* === TEXTAREA === */
+textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+/* === LINKS DE TROCA DE FORM === */
+.switch-btn {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mente do Homem — Filmes & Séries</title>
+  <link rel="stylesheet" href="css/filme.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mente <span>do</span> Homem</a>
+    <nav class="main-nav">
+      <a href="index.html">Início</a>
+      <a href="filmes.html">Filmes & Séries</a>
+      <a href="videos.html">Vídeos</a>
+      <a href="ebooks.html">Loja eBooks</a>
+      <a href="teste.html">Teste</a>
+    </nav>
+    <div class="header-actions">
+      <button id="btnTheme2" class="icon-btn">🌗</button>
+      <button id="btnMenu2" class="icon-btn mobile-only">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Filmes e Séries para Crescimento Pessoal</h2>
+
+      <div class="filter-row">
+        <input id="searchFilmes" type="search" placeholder="Pesquisar filme ou série..." />
+        <select id="genreFilter">
+          <option value="all">Todos</option>
+          <option value="drama">Drama</option>
+          <option value="documentary">Documentário</option>
+          <option value="sports">Esporte</option>
+          <option value="fight">Luta</option>
+          <option value="Romance">Romance</option>
+        </select>
+      </div>
+
+      <div id="filmesGrid" class="grid cards-grid">
+        <!-- Cards gerados por JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© <span id="year2"></span> Mente do Homem</div>
+  </footer>
+
+  <script src="js/filmes.js"></script>
+</body>
+</html>

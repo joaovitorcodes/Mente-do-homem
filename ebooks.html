@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mente do Homem — Loja eBooks</title>
+  <link rel="stylesheet" href="css/ebook.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mente <span>do</span> Homem</a>
+    <nav class="main-nav">
+      <a href="index.html">Início</a>
+      <a href="filmes.html">Filmes & Séries</a>
+      <a href="videos.html">Vídeos</a>
+      <a href="ebooks.html">Loja eBooks</a>
+      <a href="test.html">Teste</a>
+    </nav>
+    <div class="header-actions">
+      <button id="btnTheme4" class="icon-btn">🌗</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Loja de eBooks</h2>
+
+      <div class="filter-row">
+        <input id="searchEbooks" type="search" placeholder="Procurar e-book, autor..." />
+        <select id="categoryEbook">
+          <option value="all">Todas</option>
+          <option value="habitos">Hábitos</option>
+          <option value="mentalidade">Mentalidade</option>
+        </select>
+      </div>
+
+      <div id="ebooksGrid" class="grid ebooks-grid">
+        <!-- Cards gerados por JS -->
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div>© <span id="year4"></span> Mente do Homem</div>
+  </footer>
+
+  <script src="js/ebooks.js"></script>
+</body>
+</html>

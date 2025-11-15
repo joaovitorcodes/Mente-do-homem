@@ -1,0 +1,318 @@
+/* ==================================================
+   MENTE DO HOMEM — style.css (Versão FINAL Responsiva)
+   Tema: escuro elegante | vermelho + roxo neon (REFINADO E OTIMIZADO)
+   ================================================== */
+
+/* ---------- VARIÁVEIS ---------- */
+:root {
+  --bg-main: #070609;
+  --bg-card: #111016;
+  --bg-header: #0b0a0e;
+  
+  /* Cores de Destaque e Glow */
+  --accent: #b3163a;
+  --accent-glow: #ff2d55;
+  --accent2: #5b2c98;
+  --accent2-glow: #a45ee5;
+
+  /* Cores Neutras */
+  --text: #f5f5f5;
+  --text-muted: #a1a1a1;
+  --border: #1c1b21;
+  
+  /* Layout e Efeitos */
+  --radius: 10px; /* Mais amigável em mobile */
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra otimizada para performance */
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ---------- BASE & RESET (GARANTIA DE ACESSO UNIVERSAL) ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg-main);
+  color: var(--text);
+  overflow-x: hidden; /* Previne barras de rolagem horizontal indesejadas */
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ---------------------------------- */
+/* ---------- CABEÇALHO (STICKY) ---------- */
+/* ---------------------------------- */
+.site-header {
+  background: rgba(17, 16, 22, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  /* Essencial para responsividade: permite quebra de linha */
+  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem; 
+  padding: 1rem 2rem; 
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 800;
+  color: var(--accent-glow);
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 12px rgba(255, 45, 85, 0.7), 0 0 20px rgba(255, 45, 85, 0.2);
+  transition: var(--transition);
+}
+
+.brand span {
+  color: var(--accent2-glow);
+}
+
+.brand:hover {
+  color: var(--accent2-glow);
+  text-shadow: 0 0 15px rgba(164, 94, 229, 0.9), 0 0 30px rgba(164, 94, 229, 0.4);
+}
+
+/* ---------- NAVEGAÇÃO ---------- */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap; /* Permite que o menu quebre em telas estreitas */
+  gap: 1rem 1.5rem; /* Espaçamento ajustável */
+  justify-content: center;
+}
+
+.main-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition);
+  font-size: 1rem;
+  padding: 0.5rem 0; 
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-glow), var(--accent2-glow));
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.main-nav a:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(245, 245, 245, 0.2);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- BOTÕES DE AÇÃO ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0.5rem; 
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
+  color: var(--accent2-glow);
+  text-shadow: 0 0 10px rgba(164, 94, 229, 0.6);
+}
+
+/* ---------------------------------- */
+/* ---------- CONTEÚDO PRINCIPAL ---------- */
+/* ---------------------------------- */
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4rem 2rem; /* Padding base para telas maiores */
+  animation: fadeIn 0.8s var(--transition);
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--accent-glow);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(255, 45, 85, 0.4);
+}
+
+.section .muted {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+/* ---------- GRID DE VÍDEOS (CARDS) ---------- */
+.video-grid {
+  display: grid;
+  gap: 2rem; 
+  /* Estratégia de responsividade fluida: */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+}
+
+.video-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: calc(var(--radius) - 4px);
+  background: var(--bg-main);
+  display: block; /* Garante que o iframe se comporte bem */
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(164, 94, 229, 0.3), 0 0 20px rgba(179, 22, 58, 0.3);
+  border-color: var(--accent2);
+}
+
+/* ---------------------------------- */
+/* ---------- RODAPÉ ---------- */
+/* ---------------------------------- */
+.site-footer {
+  background: var(--bg-header);
+  text-align: center;
+  padding: 1.8rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.6);
+  margin-top: auto;
+}
+
+.site-footer span {
+  color: var(--accent2-glow);
+  font-weight: 600;
+}
+
+/* ---------- SCROLLBAR PERSONALIZADO ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-header);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-glow), var(--accent2-glow));
+  border-radius: 10px;
+  border: 1px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent2-glow), var(--accent-glow));
+}
+
+/* ---------------------------------- */
+/* ---------- MEDIA QUERIES (MOBILE FIRST - AJUSTES FINOS) ---------- */
+/* ---------------------------------- */
+
+/* Tablet e Mobile Landscape (Até 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column; /* Quebra o header para layout de coluna */
+    text-align: center;
+    padding: 1rem 1rem; /* Reduz padding horizontal */
+    gap: 0.5rem;
+  }
+  
+  .brand {
+    font-size: 1.8rem;
+  }
+
+  .main-nav {
+    order: 3; /* Move a navegação para o rodapé do header */
+    width: 100%;
+    justify-content: space-around; /* Distribui os links uniformemente */
+    padding: 0.5rem 0;
+  }
+  
+  .header-actions {
+    order: 2; /* Coloca as ações abaixo do logo */
+  }
+
+  .container {
+    padding: 2.5rem 1rem; /* Reduz padding para dar mais espaço */
+  }
+
+  .section h2 {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Mobile Portrait (Até 480px) */
+@media (max-width: 480px) {
+  .video-grid {
+    grid-template-columns: 1fr; /* Força UMA ÚNICA COLUNA para melhor visualização em smartphones */
+    gap: 1.5rem;
+  }
+  
+  .main-nav {
+    flex-direction: column; /* Empilha os links de navegação */
+    gap: 0.3rem;
+  }
+
+  .main-nav a {
+      font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 2rem 0.5rem; /* Padding mínimo para maximizar o conteúdo */
+  }
+}

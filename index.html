@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mente do Homem</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Mente <span>do</span> Homem</a>
+
+    <!--MENU-->
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Início</a>
+      <a href="filmes.html">Filmes & Séries</a>
+      <a href="videos.html">Vídeos</a>
+      <a href="ebooks.html">Loja eBooks</a>
+      <a href="comunidade.html" id="linkComunidade">Comunidade</a>
+      <a href="#conselhos">Conselhos</a>
+    </nav>
+    <!--FIM DO MENU-->
+
+    <div class="header-actions">
+      <button id="btnTheme" class="icon-btn" title="Alternar tema">🌗</button>
+      <button id="btnMenu" class="icon-btn mobile-only" title="Menu">☰</button>
+      <!-- Bolinha de perfil -->
+      <a href="perfil.html" id="profileIcon" title="Perfil">P</a>
+    </div>
+  </header>
+  
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Desperte sua melhor versão</h1>
+        <p class="lead">Rotina, disciplina e estratégia — transforme pequenos hábitos em grandes resultados.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="ebooks.html">Ir para Loja</a>
+          <a class="btn ghost" href="videos.html">Ver Vídeos</a>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature">
+            <h3>📚 E-books selecionados</h3>
+            <p>Guias práticos para mudar hábitos.</p>
+          </div>
+          <div class="feature">
+            <h3>🎬 Vídeos motivacionais</h3>
+            <p>Palestras curtas e práticas.</p>
+          </div>
+          <div class="feature">
+            <h3>🧠 Testes e exercícios</h3>
+            <p>Autoavaliações para planejar seu crescimento.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card summary">
+          <h3>Resumo do Dia</h3>
+          <p id="dailyTip">Carregando dica...</p>
+          <button id="openNewsletter" class="small-link">Receber dicas por e-mail</button>
+        </div>
+
+        <div class="card carousel-card">
+          <h4>Frase do Dia</h4>
+          <div id="fraseBox" class="frase-box">Carregando...</div>
+          <div class="frase-controls">
+            <button id="prevFrase">‹</button>
+            <button id="nextFrase">›</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- DESTAQUES -->
+    <section class="section destaque">
+      <h2>Destaques</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Filme recomendado</h3>
+          <p>À Procura da Felicidade — história de resiliência e foco.</p>
+        </article>
+        <article class="card">
+          <h3>E-book em promoção</h3>
+          <p>Hábitos Atômicos — comece com 1 pequeno hábito hoje.</p>
+        </article>
+        <article class="card">
+          <h3>Mini-curso gratuito</h3>
+          <p>Checklist da rotina matinal - material prático para baixar.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONSELHOS -->
+    <section id="conselhos" class="section">
+      <h2>Conselhos práticos</h2>
+      <ul class="advice-list">
+        <li>Organize seu dia em blocos de foco (90 minutos).</li>
+        <li>Durma 7–8 horas; desempenho depende do descanso.</li>
+        <li>Estabeleça 1 hábito pequeno por vez por 30 dias.</li>
+        <li>Monitore progresso com um diário breve (5 minutos).</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- NEWSLETTER MODAL -->
+  <div id="modalNewsletter" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">✕</button>
+      <h3>Inscreva-se — Dicas semanais</h3>
+      <form action="https://formspree.io/f/xblqrnqv" method="POST" class="form">
+        <input type="email" name="email" placeholder="seu@email.com" required />
+        <div class="form-actions">
+          <button class="btn" type="submit">Inscrever</button>
+          <button class="btn ghost" type="button" id="cancelModal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>© <span id="year"></span> Mente do Homem • João Vitor</div>
+    <div><a href="privacy.html" target="_blank">Política de Privacidade</a></div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
